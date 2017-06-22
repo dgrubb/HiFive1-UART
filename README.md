@@ -12,6 +12,32 @@ dave@Prospero:~/freedom-e-sdk$ make software PROGRAM=demo_uart BOARD=freedom-e30
 dave@Prospero:~/freedom-e-sdk$ make upload PROGRAM=demo\_uart BOARD=freedom-e300-hifive1
 ```
 
+## Usage
+
+```c
+#include "UART_driver.h"
+```
+
+Initialisation:
+
+```c
+void UART_init(unsigned long baud, int stop_bits);
+```
+
+Deinitialisation:
+
+```c
+void UART_deinit();
+```
+
+```c
+int UART_write(char * msg, int blocking);
+```
+
+```c
+int UART_read_n(char * buffer, int max_chars, char terminator, int blocking);
+```
+
 ## Files
 
 + demo_uart.c: Quick and dirty demonstration. Sets up the UART for 9600 baud and a timer to print a message every second.
