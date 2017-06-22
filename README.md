@@ -30,9 +30,13 @@ Deinitialisation:
 void UART_deinit();
 ```
 
+Write a string with option to block program until completed:
+
 ```c
 int UART_write(char * msg, int blocking);
 ```
+
+Read input into a target buffer with options for controlling the number of characters to read, which character to stop reading on (typically \n or \r) and specify whether to block:
 
 ```c
 int UART_read_n(char * buffer, int max_chars, char terminator, int blocking);
